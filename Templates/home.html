@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+
+{%block title%} IRC-Blogs {%endblock%}
+
+
+{%block content%}
+
+
+
+
+
+
+ <div class="container">
+
+    <div class="row">
+
+        <div class="col s12 ">
+
+
+
+
+
+            {%for p in posts %}
+
+            <div class="row">
+
+                <div id="content" class="col s12 m8">
+
+                    <div id="img" class="col" style="position:relative; display:flex; justify-content:center; top:-5px;">
+                    <img src="/media/{{p.image}}" height="250px" width="460px" class="responsive-img" style="margin-top:50px;">
+
+                </div>
+
+
+                    {{p.content |truncatewords:60 | safe}}
+                    <div class="mt20">
+                        <a href="/Blog/{{p.url}}" class="btn  bg-secondary ">Read More..</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            {%endfor %}
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{%endblock%}
